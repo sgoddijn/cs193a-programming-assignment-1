@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Random randy = new Random();
         compNumber = randy.nextInt(1000);
         image = (ImageView) findViewById(R.id.imageCenter);
-        numLives = 15;
+        numLives = 14;
         lives = (TextView) findViewById(R.id.lives);
         lives.setText("Lives: " + numLives);
     }
