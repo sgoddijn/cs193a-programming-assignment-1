@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView image;
     private int numLives;
     private TextView lives;
-    private TextView youLose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         numLives = 15;
         lives = (TextView) findViewById(R.id.lives);
         lives.setText("Lives: " + numLives);
-        youLose = (TextView) findViewById(R.id.loserText);
     }
 
     public void guessNumber(View view) {
@@ -44,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         if (numLives == 0) {
             Toast.makeText(this, "You Lose!!", Toast.LENGTH_LONG).show();
             image.setImageResource(R.drawable.loser);
+            TextView youLose = (TextView) findViewById(R.id.loserText);
             youLose.setText("The number was: " + compNumber);
         }else if (guess < compNumber) {
             Toast.makeText(this, "Think Bigger!", Toast.LENGTH_SHORT).show();
